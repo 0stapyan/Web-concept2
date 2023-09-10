@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Homework 2
+    </title>
+</head>
+<body>
+    
+    <div id="header">
+    <h1>PAGE 1</h1>
+    </div>
+    
+    <div id="sidebar">
+    <h4>SIDEBAR</h4>
+    <ul>
+    <li><a href="second.html">second page</a></li>
+    <li><a href="third.html">third page</a></li>
+    </ul>
+    </div>
+    
+    <div id="mainpart">
+        
+    <h3>MAINPART</h3>
+    <br>
+        <form id="questionForm">
+        <label for="name">Enter your name</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="age">Enter your age</label>
+        <input type="text" id="age" name="age" required><br>
+        <label for="country">In what country did you born?</label>
+        <input type="text" id="country" name="country" required><br><br>
+
+        <input type="submit">
+
+        <img src="fruits.png" alt="fruits"><br><br>
+
+        <label>16-9 is:</label><br>
+        <input type="radio" id="radioOption1" name="radioOptions" value="Option 1">
+        <label for="radioOption1">11</label><br>
+        <input type="radio" id="radioOption2" name="radioOptions" value="Option 2">
+        <label for="radioOption2">4</label><br>
+        <input type="radio" id="radioOption2" name="radioOptions" value="Option 2">
+        <label for="radioOption2">7</label><br><br>
+
+        <label for="checkboxOption">Why do you study "Web Concepts"?:</label><br>
+        <input type="checkbox" id="checkboxOption" name="checkboxOption" value="Check Option">
+        <label for="checkboxOption">For study</label><br>
+        <input type="checkbox" id="checkboxOption" name="checkboxOption" value="Check Option">
+        <label for="checkboxOption">For work</label><br>
+        <input type="checkbox" id="checkboxOption" name="checkboxOption" value="Check Option">
+        <label for="checkboxOption">It's my hobby</label><br>
+        <input type="checkbox" id="checkboxOption" name="checkboxOption" value="Check Option">
+        <label for="checkboxOption">None of above</label><br><br>
+
+        <input type="submit" value="Submit"><br><br>
+    </form></div>
+    
+    <div id="footer">
+    <strong>FOOTER</strong><br><br>
+    </div>
+
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+    <table style="width:50%">
+        <table id="answers">
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+            </tr>
+        </table>
+
+ <script>
+        document.getElementById("questionForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const age = document.getElementById("age").value;
+            const country = document.getElementById("country").value;
+
+            const table = document.getElementById("answers");
+
+            const row = table.insertRow(-1);
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            cell1.innerHTML = "Name";
+            cell2.innerHTML = name;
+
+            const row2 = table.insertRow(-1);
+            const cell3 = row2.insertCell(0);
+            const cell4 = row2.insertCell(1);
+            cell3.innerHTML = "Age";
+            cell4.innerHTML = age;
+
+            const row3 = table.insertRow(-1);
+            const cell5 = row3.insertCell(0);
+            const cell6 = row3.insertCell(1);
+            cell5.innerHTML = "Country of Birth";
+            cell6.innerHTML = country;
+
+            // Очищаємо форму
+            document.getElementById("questionForm").reset();
+        });
+    </script>
+</body>
+</html>
